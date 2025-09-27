@@ -20,6 +20,8 @@
   },
   "homepage": "https://github.com/kigozi-nich/Cse-341project-A#readme",
   "dependencies": {
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "mongodb": "^6.0.0",
+    "dotenv": "^16.0.0"
   }
 }
