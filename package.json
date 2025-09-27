@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/kigozi-nich/Cse-341project-A/issues"
   },
-  "homepage": "https://github.com/kigozi-nich/Cse-341project-A#readme"
+  "homepage": "https://github.com/kigozi-nich/Cse-341project-A#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
 }
