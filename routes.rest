@@ -1,0 +1,37 @@
+// LOCALHOST
+### Get all books
+GET http://localhost:3000/books
+
+### Get book by id
+GET http://localhost:3000/books/68d83f63b6e4b4e177484235
+
+### Create book
+POST http://localhost:3000/books HTTP/1.1
+content-type: application/json
+
+{
+  "book_id": 2,
+  "title": "1984",
+  "author": "George Orwell",
+  "genre": "Dystopian Fiction",
+  "year_published": 1949,
+  "isbn": "9780451524935",
+  "available_copies": 5
+}
+
+### PUT book
+PUT http://localhost:3000/books/68d83f63b6e4b4e177484235 HTTP/1.1
+content-type: application/json
+
+{
+  "book_id": 1,
+  "title": "To Kill a Mockingbird",
+  "author": "Harper Lee",
+  "genre": "Classic Fiction",
+  "year_published": 1960,
+  "isbn": "9780061120084",
+  "available_copies": 5
+}
+
+### DELETE book
+DELETE http://localhost:3000/books/68d83f2ab6e4b4e177484234
