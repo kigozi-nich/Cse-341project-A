@@ -20,17 +20,6 @@
             "description": "OK"
           }
         }
-      }
-    },
-    "/api-docs": {
-      "get": {
-        "description": "",
-        "responses": {
-          "default": {
-            "description": ""
-          }
-        }
-      }
     },
     "/books/": {
       "get": {
