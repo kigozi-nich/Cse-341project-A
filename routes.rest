@@ -59,6 +59,21 @@ content-type: application/json
   "books_written": ["To Kill a Mockingbird"]
 }
 
+### Create second author (George Orwell)
+POST http://localhost:3000/authors HTTP/1.1
+content-type: application/json
+
+{
+  "author_id": 2,
+  "first_name": "George",
+  "last_name": "Orwell",
+  "email": "george.orwell@example.com",
+  "birth_date": "1903-06-25",
+  "nationality": "British",
+  "biography": "British author known for 1984 and Animal Farm",
+  "books_written": ["1984", "Animal Farm"]
+}
+
 ### PUT author
 PUT http://localhost:3000/authors/replace-with-actual-id HTTP/1.1
 content-type: application/json
