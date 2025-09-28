@@ -35,3 +35,66 @@ content-type: application/json
 
 ### DELETE book
 DELETE http://localhost:3000/books/68d83f2ab6e4b4e177484234
+
+### ===== AUTHORS COLLECTION =====
+
+### Get all authors
+GET http://localhost:3000/authors
+
+### Get author by id
+GET http://localhost:3000/authors/replace-with-actual-id
+
+### Create author
+POST http://localhost:3000/authors HTTP/1.1
+content-type: application/json
+
+{
+  "author_id": 1,
+  "first_name": "Harper",
+  "last_name": "Lee",
+  "email": "harper.lee@example.com",
+  "birth_date": "1926-04-28",
+  "nationality": "American",
+  "biography": "American novelist known for To Kill a Mockingbird",
+  "books_written": ["To Kill a Mockingbird"]
+}
+
+### PUT author
+PUT http://localhost:3000/authors/replace-with-actual-id HTTP/1.1
+content-type: application/json
+
+{
+  "author_id": 1,
+  "first_name": "Harper",
+  "last_name": "Lee",
+  "email": "harper.lee@updated.com",
+  "birth_date": "1926-04-28",
+  "nationality": "American",
+  "biography": "Updated biography",
+  "books_written": ["To Kill a Mockingbird", "Go Set a Watchman"]
+}
+
+### DELETE author
+DELETE http://localhost:3000/authors/replace-with-actual-id
+
+### ===== VALIDATION TESTS =====
+
+### Test book validation (missing required fields)
+POST http://localhost:3000/books HTTP/1.1
+content-type: application/json
+
+{
+  "book_id": 3,
+  "genre": "Fiction"
+}
+
+### Test author validation (invalid email)
+POST http://localhost:3000/authors HTTP/1.1
+content-type: application/json
+
+{
+  "author_id": 2,
+  "first_name": "George",
+  "last_name": "Orwell",
+  "email": "invalid-email"
+}
