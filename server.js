@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
@@ -45,6 +46,15 @@ app.use(cors({ methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH']}));
 app.use(cors({ origin: '*'}));
 
 // GitHub OAuth Strategy Configuration
+if (!process.env.GITHUB_CLIENT_ID || !process.env.GITHUB_CLIENT_SECRET || !process.env.CALLBACK_URL) {
+    console.error('Missing required environment variables: GITHUB_CLIENT_ID, GITHUB_CLIENT_SECRET, or CALLBACK_URL');
+    console.log('Current env vars:', {
+        GITHUB_CLIENT_ID: process.env.GITHUB_CLIENT_ID ? 'SET' : 'MISSING',
+        GITHUB_CLIENT_SECRET: process.env.GITHUB_CLIENT_SECRET ? 'SET' : 'MISSING',
+        CALLBACK_URL: process.env.CALLBACK_URL ? 'SET' : 'MISSING'
+    });
+}
+
 passport.use(new GitHubStrategy({
     clientID: process.env.GITHUB_CLIENT_ID,
     clientSecret: process.env.GITHUB_CLIENT_SECRET,
